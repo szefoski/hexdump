@@ -1,0 +1,6 @@
+language: c
+sudo: required
+compiler: gcc
+dist: trusty
+script:
+    - gcc main.c -o hd && ./hd
