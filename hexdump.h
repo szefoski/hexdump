@@ -45,6 +45,7 @@ void hexdump(void* addr, int size, int skip, int linechars)
             else
             {
                 sprintf(buff, "%s __", buff);
+                sprintf(buff2, "%s ", buff2);
             }
         }
         printf("%s%s\n", buff, buff2);
