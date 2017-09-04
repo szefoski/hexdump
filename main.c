@@ -9,4 +9,5 @@ int main()
         buffer[c] = c;
     hexdump(buffer, 140, 18, 16);  
     free(buffer);
+    return 0;
 }
