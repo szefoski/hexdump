@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void hexDump(void* addr, int size, int skip, int linechars)
+void hexdump(void* addr, int size, int skip, int linechars)
 {
     if (size - skip <= 0)
     {
