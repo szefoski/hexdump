@@ -2,28 +2,32 @@
 
 void hexdump(void* addr, int size, int skip, int linechars)
 {
+    int currline;
+    int lasLine;
+    int i;
+    unsigned char *pc;
+    char buff[256];
+    char buff2[256];
+
     if (size - skip <= 0)
     {
         return;
     }
 
-    int currline = skip / linechars;
-    int lasLine = size / linechars;
+    lasLine = size / linechars;
     if (size % linechars != 0)
     {
         ++lasLine;
     }
 
-    char buff[256];
-    char buff2[256];
-    unsigned char* pc = (unsigned char*)addr;
+    pc = (unsigned char*)addr;
 
-    for (; currline < lasLine; ++currline)
+    for (currline = skip / linechars; currline < lasLine; ++currline)
     {
         sprintf(buff, "  0x%04x ", currline * linechars);
         sprintf(buff2, "  ");
 
-        for (int i = 0; i < linechars; ++i)
+        for (i = 0; i < linechars; ++i)
         {
             int charno = currline * linechars + i;
             if (charno >= skip && charno < size)
