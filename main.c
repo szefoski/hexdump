@@ -3,11 +3,13 @@
 
 int main()
 {
-    unsigned char c;
-    unsigned char *buffer = malloc(200);
-    for (c = '0'; c <= 'z'; ++c)
-        buffer[c] = c;
-    hexdump(buffer, 140, 18, 16);  
+    int i;
+    unsigned char *buffer = malloc(300);
+
+    for (i = 0; i <= 255; ++i)
+        buffer[i] = (unsigned char)i;
+
+    hexdump(buffer, 300, 22, 16);  
     free(buffer);
     return 0;
 }
